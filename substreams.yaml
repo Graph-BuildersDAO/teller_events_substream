@@ -1,0 +1,44 @@
+specVersion: v0.1.0
+package:
+  name: teller_v2_substream
+  version: v0.1.0
+
+imports:
+  sql: https://github.com/streamingfast/substreams-sink-sql/releases/download/protodefs-v1.0.7/substreams-sink-sql-protodefs-v1.0.7.spkg
+  graph: https://github.com/streamingfast/substreams-sink-subgraph/releases/download/v0.1.0/substreams-sink-subgraph-protodefs-v0.1.0.spkg
+  database_change: https://github.com/streamingfast/substreams-sink-database-changes/releases/download/v1.2.1/substreams-database-change-v1.2.1.spkg
+  entity: https://github.com/streamingfast/substreams-sink-entity-changes/releases/download/v1.3.2/substreams-sink-entity-changes-v1.3.2.spkg
+
+protobuf:
+  files:
+    - contract.proto
+  importPaths:
+    - ./proto
+
+binaries:
+  default:
+    type: wasm/rust-v1
+    file: ./target/wasm32-unknown-unknown/release/substreams.wasm
+
+modules:
+  - name: map_events
+    kind: map
+    initialBlock: 112899870
+    inputs:
+      - params: string
+      - source: sf.ethereum.type.v2.Block
+    output:
+      type: proto:contract.v1.Events
+  - name: index_events
+    kind: blockIndex
+    initialBlock: 112899870
+    inputs:
+      - map: map_events
+    output:
+      type: proto:sf.substreams.index.v1.Keys
+
+
+params:
+  map_events: start_block=112899870&seed=false&market_registry=2bd9697bf0ab44be5ca698fb5787d8f13ca48ffc&tellerv2=5cfd3aed08a444be32839bd911ebecd688861164&collateral_manager=71b04a8569914bcb99d5f95644cf6b089c826024&lendercommitment=84b550ee6959fa3f3a44498836f2a9473734ba78&lendercommitmentstg=5776057bc901166ff15d67b2dd5b818d04b98bc3&lendermanager=5594f9ee0ddf1e2d21ac8125dfea66fc4c85cd01&marketliquidityrewards=ad9ace8a1ea7267dc2ab19bf4b10465d56d5ecf0
+
+network: arbitrum

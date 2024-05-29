@@ -1,0 +1,1076 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package contract.v1;
+
+message Events {
+    repeated tellerv2_AcceptedBid tellerv2_accepted_bids = 1;
+    repeated tellerv2_AdminChanged tellerv2_admin_changeds = 2;
+    repeated tellerv2_BeaconUpgraded tellerv2_beacon_upgradeds = 3;
+    repeated tellerv2_CancelledBid tellerv2_cancelled_bids = 4;
+    repeated tellerv2_FeePaid tellerv2_fee_paids = 5;
+    repeated tellerv2_Initialized tellerv2_initializeds = 6;
+    repeated tellerv2_LoanLiquidated tellerv2_loan_liquidateds = 7;
+    repeated tellerv2_LoanRepaid tellerv2_loan_repaids = 8;
+    repeated tellerv2_LoanRepayment tellerv2_loan_repayments = 9;
+    repeated tellerv2_MarketForwarderApproved tellerv2_market_forwarder_approveds = 10;
+    repeated tellerv2_MarketForwarderRenounced tellerv2_market_forwarder_renounceds = 11;
+    repeated tellerv2_MarketOwnerCancelledBid tellerv2_market_owner_cancelled_bids = 12;
+    repeated tellerv2_OwnershipTransferred tellerv2_ownership_transferreds = 13;
+    repeated tellerv2_Paused tellerv2_pauseds = 14;
+    repeated tellerv2_ProtocolFeeSet tellerv2_protocol_fee_sets = 15;
+    repeated tellerv2_SubmittedBid tellerv2_submitted_bids = 16;
+    repeated tellerv2_TrustedMarketForwarderSet tellerv2_trusted_market_forwarder_sets = 17;
+    repeated tellerv2_Unpaused tellerv2_unpauseds = 18;
+    repeated tellerv2_Upgraded tellerv2_upgradeds = 19;
+    repeated marketregistry_AdminChanged marketregistry_admin_changeds = 20;
+    repeated marketregistry_BeaconUpgraded marketregistry_beacon_upgradeds = 21;
+    repeated marketregistry_BorrowerAttestation marketregistry_borrower_attestations = 22;
+    repeated marketregistry_BorrowerExitMarket marketregistry_borrower_exit_markets = 23;
+    repeated marketregistry_BorrowerRevocation marketregistry_borrower_revocations = 24;
+    repeated marketregistry_Initialized marketregistry_initializeds = 25;
+    repeated marketregistry_LenderAttestation marketregistry_lender_attestations = 26;
+    repeated marketregistry_LenderExitMarket marketregistry_lender_exit_markets = 27;
+    repeated marketregistry_LenderRevocation marketregistry_lender_revocations = 28;
+    repeated marketregistry_MarketClosed marketregistry_market_closeds = 29;
+    repeated marketregistry_MarketCreated marketregistry_market_createds = 30;
+    repeated marketregistry_SetBidExpirationTime marketregistry_set_bid_expiration_times = 31;
+    repeated marketregistry_SetMarketBorrowerAttestation marketregistry_set_market_borrower_attestations = 32;
+    repeated marketregistry_SetMarketFee marketregistry_set_market_fees = 33;
+    repeated marketregistry_SetMarketFeeRecipient marketregistry_set_market_fee_recipients = 34;
+    repeated marketregistry_SetMarketLenderAttestation marketregistry_set_market_lender_attestations = 35;
+    repeated marketregistry_SetMarketOwner marketregistry_set_market_owners = 36;
+    repeated marketregistry_SetMarketPaymentType marketregistry_set_market_payment_types = 37;
+    repeated marketregistry_SetMarketUri marketregistry_set_market_uris = 38;
+    repeated marketregistry_SetPaymentCycle marketregistry_set_payment_cycles = 39;
+    repeated marketregistry_SetPaymentCycleDuration marketregistry_set_payment_cycle_durations = 40;
+    repeated marketregistry_SetPaymentDefaultDuration marketregistry_set_payment_default_durations = 41;
+    repeated marketregistry_Upgraded marketregistry_upgradeds = 42;
+    repeated lendercommitment_AdminChanged lendercommitment_admin_changeds = 43;
+    repeated lendercommitment_BeaconUpgraded lendercommitment_beacon_upgradeds = 44;
+    repeated lendercommitment_CreatedCommitment lendercommitment_created_commitments = 45;
+    repeated lendercommitment_DeletedCommitment lendercommitment_deleted_commitments = 46;
+    repeated lendercommitment_ExercisedCommitment lendercommitment_exercised_commitments = 47;
+    repeated lendercommitment_Initialized lendercommitment_initializeds = 48;
+    repeated lendercommitment_UpdatedCommitment lendercommitment_updated_commitments = 49;
+    repeated lendercommitment_UpdatedCommitmentBorrowers lendercommitment_updated_commitment_borrowers = 50;
+    repeated lendercommitment_Upgraded lendercommitment_upgradeds = 51;
+    repeated lendercommitmentstaging_AdminChanged lendercommitmentstaging_admin_changeds = 52;
+    repeated lendercommitmentstaging_BeaconUpgraded lendercommitmentstaging_beacon_upgradeds = 53;
+    repeated lendercommitmentstaging_CreatedCommitment lendercommitmentstaging_created_commitments = 54;
+    repeated lendercommitmentstaging_DeletedCommitment lendercommitmentstaging_deleted_commitments = 55;
+    repeated lendercommitmentstaging_ExercisedCommitment lendercommitmentstaging_exercised_commitments = 56;
+    repeated lendercommitmentstaging_ExtensionAdded lendercommitmentstaging_extension_addeds = 57;
+    repeated lendercommitmentstaging_ExtensionRevoked lendercommitmentstaging_extension_revokeds = 58;
+    repeated lendercommitmentstaging_Initialized lendercommitmentstaging_initializeds = 59;
+    repeated lendercommitmentstaging_UpdatedCommitment lendercommitmentstaging_updated_commitments = 60;
+    repeated lendercommitmentstaging_UpdatedCommitmentBorrowers lendercommitmentstaging_updated_commitment_borrowers = 61;
+    repeated lendercommitmentstaging_Upgraded lendercommitmentstaging_upgradeds = 62;
+    repeated collateralmanager_AdminChanged collateralmanager_admin_changeds = 63;
+    repeated collateralmanager_BeaconUpgraded collateralmanager_beacon_upgradeds = 64;
+    repeated collateralmanager_CollateralClaimed collateralmanager_collateral_claimeds = 65;
+    repeated collateralmanager_CollateralCommitted collateralmanager_collateral_committeds = 66;
+    repeated collateralmanager_CollateralDeposited collateralmanager_collateral_depositeds = 67;
+    repeated collateralmanager_CollateralEscrowDeployed collateralmanager_collateral_escrow_deployeds = 68;
+    repeated collateralmanager_CollateralWithdrawn collateralmanager_collateral_withdrawns = 69;
+    repeated collateralmanager_Initialized collateralmanager_initializeds = 70;
+    repeated collateralmanager_OwnershipTransferred collateralmanager_ownership_transferreds = 71;
+    repeated collateralmanager_Upgraded collateralmanager_upgradeds = 72;
+    repeated lendermanager_AdminChanged lendermanager_admin_changeds = 73;
+    repeated lendermanager_Approval lendermanager_approvals = 74;
+    repeated lendermanager_ApprovalForAll lendermanager_approval_for_alls = 75;
+    repeated lendermanager_BeaconUpgraded lendermanager_beacon_upgradeds = 76;
+    repeated lendermanager_Initialized lendermanager_initializeds = 77;
+    repeated lendermanager_OwnershipTransferred lendermanager_ownership_transferreds = 78;
+    repeated lendermanager_Transfer lendermanager_transfers = 79;
+    repeated lendermanager_Upgraded lendermanager_upgradeds = 80;
+    repeated marketliquidityrewards_AdminChanged marketliquidityrewards_admin_changeds = 81;
+    repeated marketliquidityrewards_BeaconUpgraded marketliquidityrewards_beacon_upgradeds = 82;
+    repeated marketliquidityrewards_ClaimedRewards marketliquidityrewards_claimed_rewards = 83;
+    repeated marketliquidityrewards_CreatedAllocation marketliquidityrewards_created_allocations = 84;
+    repeated marketliquidityrewards_DecreasedAllocation marketliquidityrewards_decreased_allocations = 85;
+    repeated marketliquidityrewards_DeletedAllocation marketliquidityrewards_deleted_allocations = 86;
+    repeated marketliquidityrewards_IncreasedAllocation marketliquidityrewards_increased_allocations = 87;
+    repeated marketliquidityrewards_Initialized marketliquidityrewards_initializeds = 88;
+    repeated marketliquidityrewards_UpdatedAllocation marketliquidityrewards_updated_allocations = 89;
+    repeated marketliquidityrewards_Upgraded marketliquidityrewards_upgradeds = 90;
+}
+
+message tellerv2_AcceptedBid {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string bid_id = 5;
+    bytes lender = 6;
+    bytes evt_address = 7;
+}
+
+message tellerv2_AdminChanged {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes previous_admin = 5;
+    bytes new_admin = 6;
+}
+
+message tellerv2_BeaconUpgraded {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes beacon = 5;
+}
+
+message tellerv2_CancelledBid {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string bid_id = 5;
+}
+
+message tellerv2_FeePaid {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string bid_id = 5;
+    string fee_type = 6;
+    string amount = 7;
+}
+
+message tellerv2_Initialized {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    uint64 version = 5;
+}
+
+message tellerv2_LoanLiquidated {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string bid_id = 5;
+    bytes liquidator = 6;
+    uint64 log_ordinal = 7;
+    
+}
+
+message tellerv2_LoanRepaid {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string bid_id = 5;
+    bytes evt_address = 6;
+    uint64 log_ordinal = 7;
+}
+
+message tellerv2_LoanRepayment {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string bid_id = 5;
+    uint64 log_ordinal = 6;
+    bytes evt_address = 7;
+}
+
+message tellerv2_MarketForwarderApproved {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    bytes forwarder = 6;
+    bytes sender = 7;
+}
+
+message tellerv2_MarketForwarderRenounced {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    bytes forwarder = 6;
+    bytes sender = 7;
+}
+
+message tellerv2_MarketOwnerCancelledBid {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string bid_id = 5;
+}
+
+message tellerv2_OwnershipTransferred {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes previous_owner = 5;
+    bytes new_owner = 6;
+}
+
+message tellerv2_Paused {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes account = 5;
+}
+
+message tellerv2_ProtocolFeeSet {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    uint64 new_fee = 5;
+    uint64 old_fee = 6;
+}
+
+message tellerv2_SubmittedBid {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string bid_id = 5;
+    bytes borrower = 6;
+    bytes receiver = 7;
+    bytes metadata_uri = 8;
+    bytes evt_address = 9;
+}
+
+message tellerv2_TrustedMarketForwarderSet {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    bytes forwarder = 6;
+    bytes sender = 7;
+}
+
+message tellerv2_Unpaused {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes account = 5;
+}
+
+message tellerv2_Upgraded {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes implementation = 5;
+}
+
+message marketregistry_AdminChanged {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes previous_admin = 5;
+    bytes new_admin = 6;
+}
+
+message marketregistry_BeaconUpgraded {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes beacon = 5;
+}
+
+message marketregistry_BorrowerAttestation {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    bytes borrower = 6;
+}
+
+message marketregistry_BorrowerExitMarket {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    bytes borrower = 6;
+}
+
+message marketregistry_BorrowerRevocation {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    bytes borrower = 6;
+}
+
+message marketregistry_Initialized {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    uint64 version = 5;
+}
+
+message marketregistry_LenderAttestation {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    bytes lender = 6;
+}
+
+message marketregistry_LenderExitMarket {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    bytes lender = 6;
+}
+
+message marketregistry_LenderRevocation {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    bytes lender = 6;
+}
+
+message marketregistry_MarketClosed {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+}
+
+message marketregistry_MarketCreated {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes owner = 5;
+    string market_id = 6;
+}
+
+message marketregistry_SetBidExpirationTime {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    uint64 duration = 6;
+}
+
+message marketregistry_SetMarketBorrowerAttestation {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    bool required = 6;
+}
+
+message marketregistry_SetMarketFee {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    uint64 fee_pct = 6;
+}
+
+message marketregistry_SetMarketFeeRecipient {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    bytes new_recipient = 6;
+}
+
+message marketregistry_SetMarketLenderAttestation {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    bool required = 6;
+}
+
+message marketregistry_SetMarketOwner {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    bytes new_owner = 6;
+}
+
+message marketregistry_SetMarketPaymentType {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    uint64 payment_type = 6;
+}
+
+message marketregistry_SetMarketUri {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    string uri = 6;
+}
+
+message marketregistry_SetPaymentCycle {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    uint64 payment_cycle_type = 6;
+    uint64 value = 7;
+}
+
+message marketregistry_SetPaymentCycleDuration {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    uint64 duration = 6;
+}
+
+message marketregistry_SetPaymentDefaultDuration {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string market_id = 5;
+    uint64 duration = 6;
+}
+
+message marketregistry_Upgraded {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes implementation = 5;
+}
+
+message lendercommitment_AdminChanged {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes previous_admin = 5;
+    bytes new_admin = 6;
+}
+
+message lendercommitment_BeaconUpgraded {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes beacon = 5;
+}
+
+message lendercommitment_CreatedCommitment {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    uint64 log_ordinal = 5;
+    string commitment_id = 6;
+    bytes lender = 7;
+    string market_id = 8;
+    bytes lending_token = 9;
+    string token_amount = 10;
+    bytes evt_address = 11;
+}
+
+message lendercommitment_DeletedCommitment {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string commitment_id = 5;
+    uint64 log_ordinal = 6;
+}
+
+message lendercommitment_ExercisedCommitment {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string commitment_id = 5;
+    bytes borrower = 6;
+    string token_amount = 7;
+    string bid_id = 8;
+    bytes evt_address = 9;
+    uint64 log_ordinal = 10;
+}
+
+message lendercommitment_Initialized {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    uint64 version = 5;
+}
+
+message lendercommitment_UpdatedCommitment {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string commitment_id = 5;
+    bytes lender = 6;
+    string market_id = 7;
+    bytes lending_token = 8;
+    string token_amount = 9;
+    bytes evt_address = 10;
+}
+
+message lendercommitment_UpdatedCommitmentBorrowers {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string commitment_id = 5;
+    bytes evt_address = 6;
+}
+
+message lendercommitment_Upgraded {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes implementation = 5;
+}
+
+message lendercommitmentstaging_AdminChanged {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes previous_admin = 5;
+    bytes new_admin = 6;
+}
+
+message lendercommitmentstaging_BeaconUpgraded {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes beacon = 5;
+}
+
+message lendercommitmentstaging_CreatedCommitment {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    uint64 log_ordinal = 5;
+    string commitment_id = 6;
+    bytes lender = 7;
+    string market_id = 8;
+    bytes lending_token = 9;
+    string token_amount = 10;
+    bytes evt_address = 11;
+}
+
+message lendercommitmentstaging_DeletedCommitment {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string commitment_id = 5;
+    uint64 log_ordinal = 6;
+}
+
+message lendercommitmentstaging_ExercisedCommitment {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string commitment_id = 5;
+    bytes borrower = 6;
+    string token_amount = 7;
+    string bid_id = 8;
+    bytes evt_address = 9;
+    uint64 log_ordinal = 10;
+}
+
+message lendercommitmentstaging_ExtensionAdded {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes extension = 5;
+    bytes sender = 6;
+}
+
+message lendercommitmentstaging_ExtensionRevoked {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes extension = 5;
+    bytes sender = 6;
+}
+
+message lendercommitmentstaging_Initialized {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    uint64 version = 5;
+}
+
+message lendercommitmentstaging_UpdatedCommitment {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string commitment_id = 5;
+    bytes lender = 6;
+    string market_id = 7;
+    bytes lending_token = 8;
+    string token_amount = 9;
+}
+
+message lendercommitmentstaging_UpdatedCommitmentBorrowers {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string commitment_id = 5;
+    bytes evt_address = 6;
+}
+
+message lendercommitmentstaging_Upgraded {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes implementation = 5;
+}
+
+message collateralmanager_AdminChanged {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes previous_admin = 5;
+    bytes new_admin = 6;
+}
+
+message collateralmanager_BeaconUpgraded {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes beacon = 5;
+}
+
+message collateralmanager_CollateralClaimed {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string u_bid_id = 5;
+}
+
+message collateralmanager_CollateralCommitted {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string u_bid_id = 5;
+    uint64 u_type = 6;
+    bytes u_collateral_address = 7;
+    string u_amount = 8;
+    string u_token_id = 9;
+}
+
+message collateralmanager_CollateralDeposited {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string u_bid_id = 5;
+    uint64 u_type = 6;
+    bytes u_collateral_address = 7;
+    string u_amount = 8;
+    string u_token_id = 9;
+}
+
+message collateralmanager_CollateralEscrowDeployed {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string u_bid_id = 5;
+    bytes u_collateral_escrow = 6;
+}
+
+message collateralmanager_CollateralWithdrawn {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string u_bid_id = 5;
+    uint64 u_type = 6;
+    bytes u_collateral_address = 7;
+    string u_amount = 8;
+    string u_token_id = 9;
+    bytes u_recipient = 10;
+}
+
+message collateralmanager_Initialized {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    uint64 version = 5;
+}
+
+message collateralmanager_OwnershipTransferred {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes previous_owner = 5;
+    bytes new_owner = 6;
+}
+
+message collateralmanager_Upgraded {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes implementation = 5;
+}
+
+message lendermanager_AdminChanged {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes previous_admin = 5;
+    bytes new_admin = 6;
+}
+
+message lendermanager_Approval {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes owner = 5;
+    bytes approved = 6;
+    string token_id = 7;
+}
+
+message lendermanager_ApprovalForAll {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes owner = 5;
+    bytes operator = 6;
+    bool approved = 7;
+}
+
+message lendermanager_BeaconUpgraded {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes beacon = 5;
+}
+
+message lendermanager_Initialized {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    uint64 version = 5;
+}
+
+message lendermanager_OwnershipTransferred {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes previous_owner = 5;
+    bytes new_owner = 6;
+}
+
+message lendermanager_Transfer {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes from = 5;
+    bytes to = 6;
+    string token_id = 7;
+}
+
+message lendermanager_Upgraded {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes implementation = 5;
+}
+
+message marketliquidityrewards_AdminChanged {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes previous_admin = 5;
+    bytes new_admin = 6;
+}
+
+message marketliquidityrewards_BeaconUpgraded {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes beacon = 5;
+}
+
+message marketliquidityrewards_ClaimedRewards {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string allocation_id = 5;
+    string bid_id = 6;
+    bytes recipient = 7;
+    string amount = 8;
+    bytes evt_address = 9;
+    uint64 log_ordinal = 10;
+}
+
+message marketliquidityrewards_CreatedAllocation {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string allocation_id = 5;
+    bytes allocator = 6;
+    string market_id = 7;
+    bytes evt_address = 8;
+    uint64 log_ordinal = 9;
+}
+
+message marketliquidityrewards_DecreasedAllocation {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string allocation_id = 5;
+    string amount = 6;
+    bytes evt_address = 7;
+    uint64 log_ordinal = 8;
+}
+
+message marketliquidityrewards_DeletedAllocation {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string allocation_id = 5;
+}
+
+message marketliquidityrewards_IncreasedAllocation {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string allocation_id = 5;
+    string amount = 6;
+    bytes evt_address = 7;
+    uint64 log_ordinal = 8;
+}
+
+message marketliquidityrewards_Initialized {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    uint64 version = 5;
+}
+
+message marketliquidityrewards_UpdatedAllocation {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string allocation_id = 5;
+    bytes evt_address = 6;
+    uint64 log_ordinal = 7;
+}
+
+message marketliquidityrewards_Upgraded {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes implementation = 5;
+}
+
+message MarketPlace {
+    string id = 1;
+    uint64 marketplaceId = 2;
+    bytes owner = 3;
+    bytes feeRecipient = 4;
+    string metadataURI = 5;
+    bool isMarketOpen = 6;
+    uint64 paymentDefaultDuration = 7;
+    uint64 paymentCycleDuration = 8;
+    string paymentCycleType = 9;
+    string paymentType = 10;
+    uint64 bidExpirationTime = 11;
+    bool borrowerAttestationRequired = 12;
+    bool lenderAttestationRequired = 13;
+    uint64 marketplaceFeePercent = 14;  
+    uint64 _durationTotal = 15;
+    uint64 durationAverage = 16;
+    uint64 totalNumberOfLenders = 17;
+}
+
+message Token {
+    string id = 1;
+    bytes address = 2;
+    string token_type = 3;
+    optional uint64 nft_id = 4;
+    string name = 5;
+    string symbol = 6;
+    uint64 decimals = 7;
+}
+
+enum CommitmentEventType {
+    Created = 0;
+    Updated = 1;
+    Deleted = 2;
+    Extended = 3;
+    Exercised = 4;
+}
+
+message CommitmentEventData {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string commitment_id = 5;
+    bytes lender = 6;
+    string market_id = 7;
+    bytes lending_token = 8;
+    string token_amount = 9;
+}
+
+message CommitmentsCall {
+    string maxPrincipal = 1;
+    string expiration = 2;
+    string maxDuration = 3;
+    string minInterestRate = 4;
+    bytes collateralTokenAddress = 5;
+    string collateralTokenId = 6;
+    string maxPrincipalPerCollateralAmount = 7;
+    string collateralTokenType = 8;
+    bytes lender = 9;
+    string marketId = 10;
+    bytes principalTokenAddress = 11;
+    bool isRolloverable = 12;
+    bytes forwarder = 13;
+    string commitment_id = 14;
+    CommitmentEventType event_type = 15;
+    CommitmentEventData eventData = 16;
+
+}
+
+enum AllocationsEventType {
+    AllocationCreated = 0;
+    AllocationClaimed = 1;
+    AllocationDecreased = 2;
+    AllocationIncreased = 3;
+    AllocationUpdated = 4;
+}
+
+message AllocationEventData {
+    optional marketliquidityrewards_CreatedAllocation created = 1;
+    optional marketliquidityrewards_ClaimedRewards claimed = 2;
+    optional marketliquidityrewards_DecreasedAllocation decreased = 3;
+    optional marketliquidityrewards_IncreasedAllocation increased = 4;
+    optional marketliquidityrewards_UpdatedAllocation updated = 5;
+}
+
+message AllocationsCall {
+    bytes allocator = 1;
+    bytes rewardTokenAddress = 2;
+    string rewardTokenAmount = 3;
+    string marketId = 4;
+    bytes requiredPrincipalTokenAddress = 5;
+    bytes requiredCollateralTokenAddress = 6;
+    string minimumCollateralPerPrincipalAmount  = 7;
+    string rewardPerLoanPrincipalAmount  = 8;
+    string bidStartTimeMin = 9;
+    string bidStartTimeMax = 10;
+    string allocationStrategy = 11;
+    AllocationsEventType eventType = 12;
+    AllocationEventData eventData = 13;
+    string allocationId = 14;
+}
+
+message Payments {
+    repeated Payment payments = 1;
+}
+
+message Payment {
+    string id = 1;
+    string bid = 2;
+    string principal = 3;
+    string interest = 4;
+    string payment_date = 5;
+    string outstanding_capital = 6;
+    string status = 7;
+}
+
+enum BalanceAllowanceType {
+    Transfer = 0;
+    Approval = 1;
+}
+
+message BalanceAllowance {
+    string id = 1;
+    BalanceAllowanceType event_type = 2;
+    string event_value = 3;
+    string evt_tx_hash = 4;
+}
+
+message BalanceAllowances {
+    repeated BalanceAllowance triggers = 1;
+}

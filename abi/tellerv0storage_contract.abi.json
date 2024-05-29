@@ -1,0 +1,122 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "bids",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "borrower",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "receiver",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_lender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "marketplaceId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "_metadataURI",
+				"type": "bytes32"
+			},
+			{
+				"components": [
+					{
+						"internalType": "contract ERC20",
+						"name": "lendingToken",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "principal",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "principal",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "interest",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct TellerV0Storage.Payment",
+						"name": "totalRepaid",
+						"type": "tuple"
+					},
+					{
+						"internalType": "uint32",
+						"name": "timestamp",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "acceptedTimestamp",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "lastRepaidTimestamp",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "loanDuration",
+						"type": "uint32"
+					}
+				],
+				"internalType": "struct TellerV0Storage.LoanDetails",
+				"name": "loanDetails",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "paymentCycleAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint32",
+						"name": "paymentCycle",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint16",
+						"name": "APR",
+						"type": "uint16"
+					}
+				],
+				"internalType": "struct TellerV0Storage.Terms",
+				"name": "terms",
+				"type": "tuple"
+			},
+			{
+				"internalType": "enum TellerV0Storage.BidState",
+				"name": "state",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
